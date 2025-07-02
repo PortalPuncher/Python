@@ -10,13 +10,13 @@
 """
 
 from dataclasses import dataclass
-from typing import Self, TypeVar
+from typing import Self, TypeVar, Generic
 
 DataType = TypeVar("DataType")
 
 
 @dataclass
-class Node[DataType]:
+class Node(Generic[DataType]):
     data: DataType
     previous: Self | None = None
     next: Self | None = None
